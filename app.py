@@ -28,7 +28,7 @@ div[data-testid="column"] { padding-left: 0.40rem; padding-right: 0.40rem; }
 </style>
 """, unsafe_allow_html=True)
 
-st.title("Week 10 — Geography & Channels Deep Dive")
+st.title("Geography & Channel")
 st.caption("World map • Geography × Channels • Time trends + shipping lag • Stats • $ CAD")
 
 BASE = pathlib.Path(__file__).parent
@@ -239,7 +239,7 @@ with tabs[0]:
     st.markdown("\n".join(recs) if recs else "-")
 
 with tabs[1]:
-    st.subheader(f"World map — {metric} ($ CAD)")
+    st.subheader(f"World map - {metric} ($ CAD)")
     agg = country_totals.reset_index().rename(columns={metric: "value"})
     agg["share"] = agg["value"] / agg["value"].sum()
 
@@ -251,7 +251,7 @@ with tabs[1]:
         hover_name="Country",
         custom_data=["share"],
         projection="natural earth",
-        title=f"World Map — {metric} ($ CAD)"
+        title=f"World Map - {metric} ($ CAD)"
     )
     fig.update_traces(
         hovertemplate="<b>%{location}</b><br>Value: %{z:$,.0f} CAD<br>Share: %{customdata[0]:.1%}<extra></extra>"
