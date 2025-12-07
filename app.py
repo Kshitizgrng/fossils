@@ -251,7 +251,7 @@ with tabs[1]:
         hover_name="Country",
         custom_data=["share"],
         projection="natural earth",
-        title=f"World Map - {metric} ($ CAD)"
+        
     )
     fig.update_traces(
         hovertemplate="<b>%{location}</b><br>Value: %{z:$,.0f} CAD<br>Share: %{customdata[0]:.1%}<extra></extra>"
